@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/aop
+            http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+            http://www.springframework.org/schema/tx
+            http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/ars?useUnicode=true&amp;characterEncoding=UTF-8&amp;allowMultiQueries=true&amp;useSSL=false&amp;serverTimezone=GMT%2B8"/>
+        <property name="username" value="root"/>
+        <property name="password" value="jinjiaobo"/>
+    </bean>
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.format_sql">true</prop>
+            </props>
+        </property>
+        <property name="mappingResources">
+            <list>
+                <value>po/User.hbm.xml</value>
+                <value>po/Airplane.hbm.xml</value>
+                <value>po/Airport.hbm.xml</value>
+                <value>po/City.hbm.xml</value>
+                <value>po/Flight.hbm.xml</value>
+                <value>po/TicketInfo.hbm.xml</value>
+            </list>
+        </property>
+    </bean>
+    <!--==============================DAO==================================-->
+    <bean id="baseDAO" class="dao.BaseHibernateDAO">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="userDAO" class="dao.UserDAO" parent="baseDAO"/>
+    <bean id="flightDAO" class="dao.FlightDAO" parent="baseDAO"/>
+    <bean id="airplaneDAO" class="dao.AirplaneDAO" parent="baseDAO"/>
+    <bean id="airportDAO" class="dao.AirportDAO" parent="baseDAO"/>
+    <bean id="ticketInfoDAO" class="dao.TicketInfoDAO" parent="baseDAO"/>
+    <!--=============================Service=================================-->
+    <bean id="userService" class="service.UserService">
+        <property name="userDAO" ref="userDAO"/>
+    </bean>
+    <bean id="adminService" class="service.AdminService">
+        <property name="userDAO" ref="userDAO"/>
+        <property name="flightDAO" ref="flightDAO"/>
+        <property name="airplaneDAO" ref="airplaneDAO"/>
+        <property name="airportDAO" ref="airportDAO"/>
+        <property name="ticketInfoDAO" ref="ticketInfoDAO"/>
+    </bean>
+    <!--==============================Action==================================-->
+    <bean id="userAction" class="action.UserAction">
+        <property name="userServ" ref="userService"/>
+    </bean>
+    <bean id="adminAction" class="action.AdminAction">
+        <property name="adminServ" ref="adminService"/>
+    </bean>
+
+    <!--配置事务管理器-->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <!--定义增强处理拦截方式-->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="add*" propagation="REQUIRED"/>
+            <tx:method name="update*" propagation="REQUIRED"/>
+            <tx:method name="delete*" propagation="REQUIRED"/>
+            <tx:method name="del*" propagation="REQUIRED"/>
+            <tx:method name="*" read-only="true"/>
+        </tx:attributes>
+    </tx:advice>
+    <!--定义事务拦截切面-->
+    <aop:config>
+        <aop:pointcut id="allAdminServiceMethod" expression="execution(* service.*.*(..))"/>
+        <aop:advisor pointcut-ref="allAdminServiceMethod" advice-ref="txAdvice"/>
+    </aop:config>
+
+</beans>

@@ -1,0 +1,28 @@
+/*
+ * Copyright(c)2002-2019
+ *    项目名称:ARS55version
+ *    文件名称:core.less
+ *    Date:2019/12/25 下午7:50
+ *    Author:高源
+ */
+
+/*
+ * *
+ *  * @author  高源
+ *  * @date  ${DATE} ${TIME}
+ *  * @version 1.0
+ *
+ */
+
+// Base Class Definition
+// -------------------------
+
+.@{fa-css-prefix} {
+  display: inline-block;
+  font: normal normal normal @fa-font-size-base/@fa-line-height-base FontAwesome; // shortening font declaration
+  font-size: inherit; // can't have font-size inherit on line above, so need to override
+  text-rendering: auto; // optimizelegibility throws things off #1094
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}

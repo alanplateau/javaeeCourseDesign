@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="strutsBean" extends="struts-default" namespace="/">
+        <interceptors>
+            <interceptor name="loginAuthority" class="interceptors.LoginAuthorityInterceptor"/>
+        </interceptors>
+
+        <action name="updateUser" class="action.UserAction" method="updateUser">
+            <result name="success">/personalInformation.jsp</result>
+        </action>
+        <action name="userAction" class="userAction" method="loginForUser">
+            <result name="normalSuccess" type="redirect">index2.jsp</result>
+            <result name="normalFail">login.jsp</result>
+        </action>
+        <action name="loginByCodeAction" class="userAction" method="loginByCode">
+            <result name="success" type="redirect">index2.jsp</result>
+            <result name="error">verificationLogin.jsp</result>
+        </action>
+        <action name="registerAction" class="userAction" method="register">
+            <result name="success">login.jsp</result>
+            <result name="error">register.jsp</result>
+        </action>
+        <action name="logOutAction" class="userAction" method="logOut">
+            <result name="success">login.jsp</result>
+        </action>
+        <action name="setCityAction" class="setCityAction" method="getCitySort">
+            <result name="success">index.jsp</result>
+        </action>
+        <action name="setCityForIndex2Action" class="setCityAction" method="getCitySort">
+            <result name="success">index2.jsp</result>
+        </action>
+        <action name="flightSearchAction" class="flightSearchAction" method="searchFlight">
+            <result name="success">/index.jsp</result>
+            <result name="error">/nouse/fail.jsp</result>
+        </action>
+        <action name="sendMessageAction" class="sendMessageAction" method="sendMes">
+            <result name="success">/verificationLogin.jsp</result>
+        </action>
+        <action name="sendMessageForRegisterAction" class="sendMessageAction" method="sendMes">
+            <result name="success">/register.jsp</result>
+        </action>
+        <action name="savePassenger" class="action.PassengerAction" method="savePassenger">
+            <result name="success" type="chain">findName</result>
+        </action>
+        <action name="findByName" class="action.PassengerAction" method="findByName">
+            <result name="success">/favoriteContacts.jsp</result>
+        </action>
+        <action name="findName" class="action.PassengerAction" method="findName">
+            <result name="success">/favoriteContacts.jsp</result>
+        </action>
+        <action name="deletePassenger" class="action.PassengerAction" method="deletePassenger">
+            <result name="success" type="redirectAction">findName</result>
+        </action>
+        <action name="findUsingFlight" class="action.OrderAction" method="findUsingFlight">
+            <result name="success">/findUsingFlight.jsp</result>
+            <result name="failed">/index.jsp</result>
+            <result name="login">/login.jsp</result>
+            <!--            配置系统默认拦截器-->
+            <interceptor-ref name="defaultStack"/>
+            <!--            配置loginAuthority拦截器-->
+            <interceptor-ref name="loginAuthority"/>
+        </action>
+        <action name="addOrders" class="action.OrderAction" method="addOrders">
+            <result name="failed">/buyTicketFail.jsp</result>
+            <result name="success">/buyTicketSuccess.jsp</result>
+        </action>
+        <action name="findOrders" class="action.OrderAction" method="findByAccount">
+            <result name="success">/traveledOrders.jsp</result>
+        </action>
+        <action name="refundTicket" class="action.OrderAction" method="refundTicket">
+            <result name="success">/refundTicketSuccess.jsp</result>
+        </action>
+        <action name="findByAcc" class="action.OrderAction" method="findByAcc">
+            <result name="success" >untraveledOrders.jsp</result>
+        </action>
+    </package>
+</struts>

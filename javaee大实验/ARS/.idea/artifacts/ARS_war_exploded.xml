@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="ARS:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/ARS_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="ARS/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="ARS" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Hibernate" />
+          <element id="library" level="project" name="Spring" />
+          <element id="library" level="project" name="Struts 2" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../mysql-connector-java-8.0.16/mysql-connector-java-8.0.16.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../commons-logging-1.2/commons-logging-1.2.jar" />
+          <element id="library" level="project" name="aspectjrt" />
+          <element id="library" level="project" name="aopalliance-1.0" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

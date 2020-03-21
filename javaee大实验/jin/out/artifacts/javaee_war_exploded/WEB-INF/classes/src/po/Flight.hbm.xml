@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="po.Flight" table="flight" schema="ars">
+        <id name="flightId">
+            <column name="flightID" sql-type="varchar(20)"/>
+        </id>
+        <property name="departureTime">
+            <column name="departureTime" sql-type="date"/>
+        </property>
+        <property name="arrivalTime">
+            <column name="arrivalTime" sql-type="date"/>
+        </property>
+        <!--airplane与flight一对多，多方save-update，则执行多方save语句时，执行多方insert，发现自己需要维护外键，即需要将外键值和数据一起insert，而目前尚无外键关联的一方对象，则将多方的insert语句变为预处理语句存起来等条件成熟后再执行，所以先执行的是级联的对一方的insert，然后预处理insert执行条件完成，执行该预处理的insert语句-->
+        <many-to-one name="airplane" class="po.Airplane" lazy="false">
+            <column name="airplaneID"/>
+        </many-to-one>
+        <many-to-one name="arrivalAirport" class="po.Airport" lazy="false">
+            <column name="arrivalAirportID"/>
+        </many-to-one>
+        <many-to-one name="departureAirport" class="po.Airport" lazy="false">
+            <column name="departureAirportID"/>
+        </many-to-one>
+        <!--外键一对一双向关联TicketInfo-->
+        <one-to-one name="ticketInfo" class="po.TicketInfo" cascade="all" property-ref="flight" lazy="false"/>
+    </class>
+</hibernate-mapping>

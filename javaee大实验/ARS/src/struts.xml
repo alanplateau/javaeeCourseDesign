@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+    <package name="strutsBean" extends="struts-default" namespace="/">
+
+        <!--定义拦截器-->
+        <interceptors>
+            <interceptor name="adminAuthority" class="interceptors.AdminAuthorityInterceptor"/>
+        </interceptors>
+
+        <action name="login" class="userAction" method="login">
+            <result name="adminSuccess" type="redirect">adminAction.action?method=loadFlight</result>
+            <result name="managerSuccess"></result>
+            <result name="normalSuccess"></result>
+            <result name="fail">login.jsp</result>
+        </action>
+
+        <!--action的name和package的namespace拼成一个url路径/adminAction.action-->
+        <!--在浏览器中通过localhost:8080/web项目名称/adminAction.action就可访问这个acion-->
+        <action name="adminAction" class="adminAction">
+            <result name="loadAirplane">/AirplaneManagement.jsp</result>
+            <result name="airplaneSuccess" type="redirect">adminAction.action?method=loadAirplane</result>
+            <result name="loadAirport">/AirportManagement.jsp</result>
+            <result name="airportSuccess" type="redirect">adminAction.action?method=loadAirport</result>
+            <result name="loadFlight">/FlightManagement.jsp</result>
+            <result name="flightSuccess" type="redirect">adminAction.action?method=loadFlight</result>
+            <result name="loadManager">/ManagerManagement.jsp</result>
+            <result name="managerSuccess" type="redirect">adminAction.action?method=loadManager</result>
+            <result name="fail">/login.jsp</result>
+            <result name="login">/login.jsp</result>
+            <result name="input">login.jsp</result>
+
+            <!--配置系统默认拦截器-->
+            <interceptor-ref name="defaultStack"/>
+            <!--配置adminAuthority拦截器-->
+            <interceptor-ref name="adminAuthority"/>
+        </action>
+
+    </package>
+</struts>

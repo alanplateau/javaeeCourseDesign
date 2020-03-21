@@ -1,0 +1,27 @@
+/*
+ * Copyright(c)2002-2019
+ *    项目名称:ARS55version
+ *    文件名称:WdatePicker.css
+ *    Date:2019/12/25 下午7:50
+ *    Author:高源
+ */
+
+/*
+ * *
+ *  * @author  高源
+ *  * @date  ${DATE} ${TIME}
+ *  * @version 1.0
+ *
+ */
+
+.Wdate{
+	border:#999 1px solid;
+	height:20px;
+	background:#fff url(datePicker.gif) no-repeat right;
+}
+.Wdate::-ms-clear{display:none;}
+
+.WdateFmtErr{
+	font-weight:bold;
+	color:red;
+}

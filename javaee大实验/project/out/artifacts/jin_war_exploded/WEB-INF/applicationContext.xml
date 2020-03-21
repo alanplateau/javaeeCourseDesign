@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd
+       http://www.springframework.org/schema/jdbc
+       http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/ars?useUnicode=true&amp;characterEncoding=UTF-8&amp;allowMultiQueries=true&amp;useSSL=false&amp;serverTimezone=GMT%2B8"/>
+        <property name="username" value="root"/>
+        <property name="password" value="jinjiaobo"/>
+    </bean>
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mappingResources">
+            <list>
+                <value>po/User.hbm.xml</value>
+                <value>po/Passenger.hbm.xml</value>
+                <value>po/Airport.hbm.xml</value>
+                <value>po/Airplane.hbm.xml</value>
+                <value>po/City.hbm.xml</value>
+                <value>po/Flight.hbm.xml</value>
+                <value>po/TicketInfo.hbm.xml</value>
+                <value>po/Orders.hbm.xml</value>
+            </list>
+        </property>
+    </bean>
+    <bean id="baseDAO" class="dao.BaseHibernateDAO">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="userDAO" class="dao.UserDAO" parent="baseDAO"/>
+    <bean id="userService" class="service.UserService">
+        <property name="userDAO" ref="userDAO"/>
+    </bean>
+    <bean id="userAction" class="action.UserAction" scope="prototype">
+        <property name="userService" ref="userService"/>
+    </bean>
+
+    <bean id="cityDAO" class="dao.CityDAO" parent="baseDAO"/>
+
+    <bean id="setCityService" class="service.SetCityService">
+        <property name="cityDAO" ref="cityDAO"/>
+    </bean>
+
+    <bean id="setCityAction" class="action.SetCityAction">
+        <property name="setCityService" ref="setCityService"/>
+    </bean>
+
+    <bean id="passengerDAO" class="dao.PassengerDAO" parent="baseDAO"/>
+    <bean id="passengerService" class="service.PassengerService">
+        <property name="passengerDAO" ref="passengerDAO"/>
+    </bean>
+    <bean id="passengerAction" class="action.PassengerAction">
+        <property name="passengerService" ref="passengerService"/>
+    </bean>
+    <bean id="ticketinfoDAO" class="dao.TicketinfoDAO" parent="baseDAO"/>
+    <bean id="ticketinfoService" class="service.TickerinfoService">
+        <property name="ticketinfoDAO" ref="ticketinfoDAO"/>
+    </bean>
+    <bean id="flightDAO" class="dao.FlightDAO" parent="baseDAO"/>
+    <bean id="flightService" class="service.FlightService">
+        <property name="flightDAO" ref="flightDAO"/>
+    </bean>
+    <bean id="airportDAO" class="dao.AirportDAO" parent="baseDAO"/>
+    <bean id="airportService" class="service.AirportService">
+        <property name="airportDAO" ref="airportDAO"/>
+    </bean>
+    <bean id="ordersDAO" class="dao.OrdersDAO" parent="baseDAO"/>
+    <bean id="ordersService" class="service.OrderService">
+        <property name="ordersDAO" ref="ordersDAO"/>
+        <property name="ticketinfoDAO" ref="ticketinfoDAO"/>
+        <property name="flightDAO" ref="flightDAO"/>
+    </bean>
+    <bean id="orderAction" class="action.OrderAction">
+        <property name="TicketinfoService" ref="ticketinfoService"/>
+        <property name="flightService" ref="flightService"/>
+        <property name="passengerService" ref="passengerService"/>
+        <property name="ordersService" ref="ordersService"/>
+    </bean>
+
+    <bean id="flightSearchAction" class="action.FlightSearchAction">
+        <property name="flightService" ref="flightService"/>
+    </bean>
+    <bean id="sendMessageAction" class="action.SendMessage" scope="prototype"/>
+</beans>

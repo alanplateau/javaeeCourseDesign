@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="commons-lang3-3.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/commons-lang3-3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/commons-io-2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/commons-fileupload-1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/freemarker-2.3.28.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/javassist-3.11.0.GA.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/ognl-3.0.21.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/struts2-core-2.3.37.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/struts2-dojo-plugin-2.3.37.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/struts2-spring-plugin-2.3.37.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/xwork-core-2.3.37.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

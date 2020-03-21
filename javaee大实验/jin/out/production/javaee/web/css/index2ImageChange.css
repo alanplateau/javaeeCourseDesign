@@ -1,0 +1,185 @@
+.imageChange{
+    position: relative;
+    height: 555px;
+    overflow: hidden;
+    background-image: url(../img/imageChange/travel1.jpg);
+}
+
+.flex-control-nav {
+    bottom: 10px;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+}
+
+.flex-control-nav {
+    bottom: 10px;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+}
+
+.flex-control-nav li {
+    margin: 0 0 0 5px;
+    display: inline-block;
+    zoom: 1;
+}
+
+.flex-control-nav li a.flex-active {
+    background: #4bafe1;
+    border: 1px #4bafe1 solid;
+    cursor: default;
+}
+
+/*以下为index2中的预定行程*/
+.zsl-query{
+    position: absolute;
+    top:23px;
+    left: 20px;
+    z-index: 9999;
+}
+
+.zsl-query a {
+    color: #008bcc;
+}
+
+.zsl-query-pos {
+    position: relative;
+}
+
+.zsl-query-box {
+    background: #fff;
+    width: 522px;
+    height: 300px;
+}
+
+.zsl-query-box>ul {
+    overflow: hidden;
+    background: #008bcc;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+}
+
+
+.zsl-query .query-child-con {
+    padding: 15px 20px;
+}
+
+.fl {
+    float: left;
+}
+
+.zsl-query .hm-radio.current {
+    color: #008bcc;
+    background: url(../img/home.png) no-repeat -78px -319px;
+}
+
+.zsl-query .hm-radio {
+    display: block;
+    float: left;
+    padding-left: 30px;
+    background: url(../img/home.png) no-repeat -78px -341px;
+    color: #0e386c;
+    margin-right: 30px;
+}
+.zsl-query .search-line {
+    width: 100%;
+    font-size: 15px;
+    color: #393939;
+    /*padding: 10px 0;*/
+    overflow: hidden;
+}
+
+.zsl-query .flight .search-line {
+    padding: 4px 0;
+}
+
+.zsl-query .search-col-2 {
+    width: 49%;
+}
+
+.zsl-query .search-label {
+    line-height: 31px;
+}
+
+.zsl-query .search-input {
+    border: 1px solid #afbdcf;
+    height: 35px;
+    border-radius: 2px;
+    width: 220px;
+}
+
+.zsl-query .search-input .search-logo {
+    width: 40px;
+    height: 35px;
+    background: #afbdcf url(../img/UI.png) no-repeat 8px 10px;
+    display: block;
+    float: left;
+}
+
+.zsl-query .search-input input {
+    line-height: 35px;
+    border: 0;
+    padding: 0 5px;
+    width: 170px;
+    float: left;
+    height: 35px;
+}
+
+.ui-city-helper {
+    height: 30px;
+    margin-top: -15px;
+}
+
+.ui-city-helper .ico-city {
+    background: url(../img/location_icon.png) no-repeat;
+    height: 30px;
+}
+
+.zls-city-btn {
+    width: 30px;
+    height: 26px;
+    background: url(../img/home.png) no-repeat -57px -449px;
+    position: absolute;
+    left: 222px;
+    top: 35px;
+}
+
+.zsl-query .search-input .search-logo.arr {
+    background: #afbdcf url(../img/UI.png) no-repeat -29px 10px;
+}
+
+.zsl-query .search-input .search-logo.calendar {
+    background: #afbdcf url(../img/UI.png) no-repeat 11px -20px;
+}
+
+.ui-calendar-helper .weekday {
+    font-size: 14px;
+}
+
+.search-input.disabled {
+    cursor: not-allowed;
+    background-color: #ebebe4;
+}
+
+.search-bottom {
+    margin: 15px 0;
+}
+
+.zsl-query .searchBtn {
+    display: block;
+    width: 225px;
+    height: 35px;
+    line-height: 35px;
+    color: #fff;
+    background: #e5014a;
+    border-radius: 7px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.fr {
+    float: right;
+}

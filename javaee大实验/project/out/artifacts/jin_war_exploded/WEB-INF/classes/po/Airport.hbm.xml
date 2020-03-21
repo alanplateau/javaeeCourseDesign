@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="po.Airport" table="airport" schema="ARS">
+        <id name="airportId">
+            <column name="airportID" sql-type="varchar(20)"/>
+        </id>
+        <property name="airportName">
+            <column name="airportName" sql-type="varchar(20)" length="20" />
+        </property>
+        <!--单向多对一-->
+        <many-to-one name="city" column="cityName" class="po.City" cascade="save-update"/>
+        <!--在po.Flight类的映射表中产生名为departureAirportID的外键-->
+        <set name="departureflights" inverse="true" cascade="all" lazy="false">
+            <key column="departureAirportID"/>
+            <one-to-many class="po.Flight"/>
+        </set>
+        <!--在po.Flight类的映射表中产生名为arrivalAirportID的外键-->
+        <set name="arrivalflights" inverse="true" cascade="all" lazy="false">
+            <key column="arrivalAirportID"/>
+            <one-to-many class="po.Flight"/>
+        </set>
+    </class>
+</hibernate-mapping>

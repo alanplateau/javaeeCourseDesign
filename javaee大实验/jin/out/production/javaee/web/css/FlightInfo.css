@@ -1,0 +1,371 @@
+/*
+ * Copyright(c)2002-2019
+ *    项目名称:ARS55version
+ *    文件名称:FlightInfo.css
+ *    Date:2019/12/25 下午7:50
+ *    Author:高源
+ */
+
+/*
+ * *
+ *  * @author  高源
+ *  * @date  ${DATE} ${TIME}
+ *  * @version 1.0
+ *
+ */
+
+.zls-flightInfoShow{
+    width: 1050px;
+    margin: 0 auto;
+    min-height: 700px;
+}
+
+.zls-fltitle {
+    margin-top: 40px;
+    color: #fff;
+    background: #008acb;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-size: 18px;
+    padding: 0 15px;
+    overflow: hidden;
+    line-height: 48px;
+}
+
+.zls-filter-buy {
+    margin-top: 15px;
+    overflow: hidden;
+    line-height: 28px;
+}
+
+.zls-flight-head {
+    overflow: hidden;
+    line-height: 20px;
+    border: 1px solid #dbeff9;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    font-size: 15px;
+    padding-left: 18px;
+    margin-top: 15px;
+    padding: 10px 0;
+}
+
+.zls-fltitle div {
+    float: left;
+}
+
+/*->*/
+.arrow {
+    width: 36px;
+    height: 2px;
+    background: #fff;
+    margin: 24px 8px 0 5px;
+    position: relative;
+}
+
+.zls-fltitle .psnnum {
+    float: right;
+    font-size: 16px;
+}
+
+.arrow i {
+    position: absolute;
+    right: -3px;
+    top: -4px;
+    width: 0;
+    height: 0;
+    border-left: 12px solid #fff;
+    border-top: 6px solid transparent;
+}
+
+.zls-fltitle .psnnum span {
+    padding-right: 5px;
+}
+
+.zls-buy {
+    float: right;
+    position: relative;
+    padding-left: 36px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #008acb;
+    cursor: pointer;
+}
+
+.fligthL {
+    float: left;
+    width: 60%;
+}
+
+.zls-flight-head ul {
+    overflow: hidden;
+}
+
+.zls-flight-head ul li {
+    float: left;
+}
+
+
+.zls-headL li {
+    width: 32%;
+}
+
+.zls-flight-head li span {
+    position: relative;
+    padding-right: 20px;
+    display: inline-block;
+    padding-left: 5px;
+}
+
+.orderClick {
+    cursor: pointer;
+}
+
+.zls-headR li {
+    width: 24.9%;
+    text-align: center;
+}
+
+.sequence {
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    margin-top: -7px;
+}
+
+.sequence i.up {
+    border-bottom: 6px solid #b2dcef;
+}
+
+.sequence i {
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    cursor: pointer;
+}
+
+.sequence i.down {
+    border-top: 6px solid #b2dcef;
+    margin-top: 3px;
+}
+
+.zls-flight {
+    margin-top: 20px;
+}
+
+ul.zls-flg-ui > li {
+    overflow: hidden;
+    border: 1px solid #dbeff9;
+    background: #f6fafc;
+    margin-bottom: 20px;
+}
+
+ul.zls-flg-ui .fligthL {
+    overflow: hidden;
+    padding-top: 25px;
+    min-height: 65px;
+}
+
+.fligthL {
+    float: left;
+    width: 60%;
+}
+
+ul.zls-flg-ui .fligthL > div {
+    float: left;
+}
+
+.zls-flgno {
+    padding: 0 5px 0 54px;
+    line-height: 20px;
+    width: 90px;
+}
+
+.zls-flgno-info {
+    position: relative;
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+.zls-flgno-info i, .trans-detail-flightno i {
+    width: 26px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: -36px;
+    background: url(../img/flight.png) 0 -196px no-repeat;
+}
+
+.zls-flgno-info span, .zls-flgplane {
+    color: #008acb;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.zls-flgtime-r {
+    text-align: right;
+}
+
+.zls-flgtime {
+    font-size: 22px;
+    font-weight: bold;
+    width: 119px;
+    line-height: 24px;
+}
+
+.zls-flplace {
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 20px;
+}
+
+.zls-flg-during {
+    padding: 0 10px;
+    width: 110px;
+    text-align: center;
+}
+
+.zls-flg-dir {
+    border-bottom: 2px solid #bcc9d7;
+    height: 4px;
+    position: relative;
+    margin-top: 10px;
+}
+
+.zls-flg-dir i {
+    position: absolute;
+    right: -3px;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-left: 12px solid #bcc9d7;
+    border-top: 6px solid transparent;
+}
+
+.zls-flg-time {
+    color: #8298b3;
+    padding-left: 15px;
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+    margin-top: 8px;
+}
+
+.zls-flg-time i {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    background: url(../images/flight.png) -26px -68px no-repeat;
+    margin-top: -6px;
+}
+
+.zls-flgtime {
+    font-size: 22px;
+    font-weight: bold;
+    width: 119px;
+    line-height: 24px;
+}
+
+.zls-flgother {
+    margin-top: 20px;
+}
+
+.zls-flgother > div {
+    float: left;
+    cursor: pointer;
+}
+
+.zls-meal {
+    width: 16px;
+    height: 16px;
+    background: url(../img/flight.png) 0 -65px no-repeat;
+    margin: 3px 0 0 5px;
+}
+
+ul.zls-flg-ui .fligthR {
+    overflow: hidden;
+}
+
+.fligthR {
+    float: right;
+    width: 40%;
+}
+
+ul.zls-flg-ui .fligthR ul {
+    overflow: hidden;
+}
+
+ul.zls-flg-ui .fligthR li.disabled {
+    cursor: auto;
+}
+
+ul.zls-flg-ui .fligthR li {
+    float: left;
+    padding: 22px 0 25px 0;
+    position: relative;
+    width: 24.7%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    /*color: #e5004a;*/
+    /*color: lightblue;*/
+    color: #000;
+    border-left: 1px solid #dbeff9;
+    line-height: 32px;
+    min-height: 32px;
+    cursor: pointer;
+}
+
+ul.zls-flg-ui .fligthR li i {
+    width: 16px;
+    height: 16px;
+    background: url(../img/flight.png) 0 -160px no-repeat;
+    position: absolute;
+    left: 50%;
+    margin-left: -8px;
+    top: 33px;
+}
+
+.check-button{
+    width: 60px;
+    padding:3px;
+    background-color: #428bca;
+    border-color: #357ebd;
+    color: #fff;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px; /* future proofing */
+    -khtml-border-radius: 10px; /* for old Konqueror browsers */
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    font-weight: 900;
+    font-size:17px;
+    /*position: absolute;*/
+    /*top:22px;*/
+    /*left: 11px;*/
+}
+
+.check-button1{
+    width: 80px;
+    padding:3px;
+    background-color: rgba(57, 61, 82, 0);
+    border-color: #357ebd;
+    color: #fff;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px; /* future proofing */
+    -khtml-border-radius: 10px; /* for old Konqueror browsers */
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    font-weight:normal;
+    font-size:14px;
+    /*position: absolute;*/
+    /*top:22px;*/
+    /*left: 11px;*/
+}

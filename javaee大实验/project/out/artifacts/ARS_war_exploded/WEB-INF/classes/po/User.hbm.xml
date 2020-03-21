@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="po.User" table="user" schema="ARS">
+        <id name="account">
+            <column name="account" sql-type="varchar(20)" length="20"/>
+        </id>
+        <property name="password">
+            <column name="password" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="type">
+            <column name="type" sql-type="int(11)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

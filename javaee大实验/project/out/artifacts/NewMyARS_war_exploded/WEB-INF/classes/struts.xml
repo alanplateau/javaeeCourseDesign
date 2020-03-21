@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts
+Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <package name="strutsBean" extends="struts-default" namespace="/">
+
+        <action name="OperatorLogin" class="action.OperatorAction" method = "login">
+            <result name="success">/t1.jsp</result>
+            <result name="fail">/Fail.jsp</result>
+        </action>
+<!--        <action name="searchOrders" class="action.OperatorAction" method = "searchOrders">-->
+<!--            <result name="success">/orders.jsp</result>-->
+<!--            <result name="fail">/operatorLoginFail.jsp</result>-->
+<!--        </action>-->
+        <action name="flightInfo" class="action.OperatorAction" method = "flightInfo">
+            <result name="success">/t2.jsp</result>
+            <result name="fail">/Fail.jsp</result>
+        </action>
+        <action name="alterOrder" class="action.OperatorAction" method = "alterOrder">
+            <result name="success">/t2.jsp</result>
+            <result name="fail">/Fail.jsp</result>
+        </action>
+        <action name="checkTicket" class="action.OperatorAction" method = "checkTicket">
+            <result name="success">/t3.jsp</result>
+            <result name="fail">/Fail.jsp</result>
+        </action>
+        <action name="buyTicket" class="action.OperatorAction" method = "buyTicket">
+            <result name="success">/t2.jsp</result>
+            <result name="fail">/Fail.jsp</result>
+        </action>
+        <action name="refresh1" class="action.OperatorAction" method = "refresh1">
+            <result name="success">/t1.jsp</result>
+            <result name="fail">/Fail.jsp</result>
+        </action>
+    </package>
+</struts>

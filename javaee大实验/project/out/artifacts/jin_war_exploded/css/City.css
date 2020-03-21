@@ -1,0 +1,138 @@
+/*
+ * Copyright(c)2002-2019
+ *    项目名称:ARS55version
+ *    文件名称:City.css
+ *    Date:2019/12/25 下午7:50
+ *    Author:高源
+ */
+
+/*
+ * *
+ *  * @author  高源
+ *  * @date  ${DATE} ${TIME}
+ *  * @version 1.0
+ *
+ */
+
+/*总*/
+#ui-city-unit {
+    background-color: #fff;
+    border: 1px solid #098bc4;
+    left: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    width: 446px;
+    z-index: 99666;
+    font-size: 12px;
+    /*display: none;*/
+
+}
+
+/*中国，国际*/
+#ui-city-unit .header {
+    overflow: hidden;
+    padding-top: 10px;
+    background: #0093d0;
+    border: 0;
+}
+
+#ui-city-box .ui-tab {
+    color: #fff;
+    float: left;
+    font-weight: bold;
+    margin-left: 10px;
+    padding: 5px 20px;
+    text-align: center;
+}
+
+#ui-city-box .ui-tab-on, #ui-city-box .ui-tab-on:hover {
+    background-color: white;
+    color: #333;
+}
+
+
+
+#ui-city-box-tab-content {
+    padding: 5px;
+}
+
+.ui-tab-box .ui-tab-content {
+    display: none;
+}
+
+.ui-tab-box .ui-content-on {
+    display: block;
+}
+
+#ui-city-box-tab-content .group-lv {
+    border-bottom: 1px dashed #ccc;
+    padding: 2px 0;
+}
+
+.ui-tab-bar {
+    overflow: hidden;
+}
+
+#ui-city-box-tab-content .ui-tab-on {
+    background-color: #eee;
+    color: #dc143c;
+}
+
+#ui-city-box-tab-content .ui-tab {
+    border-radius: 3px;
+    color: #008dd3;
+    margin-left: 9px;
+    padding: 2px 10px;
+}
+
+.ui-tab-bar .ui-tab-on, .ui-tab-bar .ui-tab-on:hover {
+    background-color: #018ed2;
+    color: white;
+    cursor: default;
+}
+
+.ui-tab-bar .ui-tab {
+    float: left;
+    padding: 2px 6px;
+    color: #333;
+    cursor: pointer;
+}
+
+
+
+#ui-city-box-tab-content .city-section {
+    line-height: 20px;
+    margin-left: -4px;
+    overflow: hidden;
+    position: relative;
+}
+
+#ui-city-box-tab-content .letter {
+    color: #dc143c;
+    float: left;
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: center;
+    width: 16px;
+}
+
+#ui-city-box-tab-content .ui-city-list {
+    margin-left: 20px;
+    overflow: hidden;
+}
+
+#ui-city-box-tab-content .ui-city-link {
+    color: #444;
+    cursor: pointer;
+    display: block;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 7em;
+    margin-top: 5px;
+    word-break: keep-all;
+    text-decoration: none;
+    text-indent: 3px;
+}

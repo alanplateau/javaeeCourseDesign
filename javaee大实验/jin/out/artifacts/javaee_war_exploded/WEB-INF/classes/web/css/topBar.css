@@ -1,0 +1,198 @@
+/*
+ * Copyright(c)2002-2019
+ *    项目名称:ARS55version
+ *    文件名称:topBar.css
+ *    Date:2019/12/25 下午7:50
+ *    Author:高源
+ */
+
+/*
+ * *
+ *  * @author  高源
+ *  * @date  ${DATE} ${TIME}
+ *  * @version 1.0
+ *
+ */
+
+ul,li{ padding:0;margin:0;list-style:none}
+
+div{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+.page{
+    width: 1050px;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+.header {
+    background: #fff;
+    position: relative;
+    /*z-index: 2000;*/
+    font-size: 14px;
+    box-sizing: border-box;
+    font-family: "Helvetica Neue",
+    Helvetica, Arial, "PingFang SC",
+    "Hiragino Sans GB", "Heiti SC",
+    "Microsoft YaHei", "WenQuanYi Micro Hei",
+    sans-serif;
+}
+
+/*最顶上的log和搜索框*/
+.wrapper{
+    width: 1050px;
+    /*需要修改*/
+    padding: 0 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header-con{
+    height: 80px;
+}
+
+.logo{
+    float: left;
+    margin: 15px 0 0 0;
+    padding: 0;
+}
+
+.logo a{
+    display: block;
+    width: 200px;
+    height: 50px;
+    text-indent: -9999px;
+    /*background-image: url(../img/logo@2x.png);*/
+    /*background-image: -webkit-image-set(url(../img/logo@2x.png) 1x,url(../img/logo@2x.png) 2x);*/
+    /*background-image: image-set(url(../img/logo@2x.png) 1x,url(../img/logo@2x.png) 2x);*/
+    background-image: url(../img/gdhk1.jpg);
+    background-image: -webkit-image-set(url(../img/gdhk1.jpg) 1x,url(../img/gdhk1.jpg) 2x);
+    background-image: image-set(url(../img/gdhk1.jpg) 1x,url(../img/gdhk1.jpg) 2x);
+}
+
+.header-right{
+    float: right;
+    margin: 24px 0 0 0;
+    width: 800px;
+    height: 40px;
+    background-image: url(../img/train@2x.png);
+    background-image: -webkit-image-set(url(../img/train@2x.png) 1x,url(../img/train@2x.png) 2x);
+    background-image: image-set(url(../img/train@2x.png) 1x,url(../img/train@2x.png) 2x);
+    background-repeat: no-repeat;
+    position: relative;
+    /*z-index: 2000;*/
+}
+
+.header-search{
+    float: left;
+    width: 450px;
+    margin: 5px 0 5px 100px;
+}
+
+.header-search .search-bd{
+    width: 420px;
+    position: relative;
+}
+
+.header-search .search-btn{
+    float: left;
+    width: 30px;
+    color: #fff;
+    height: 30px;
+    line-height: 30px;
+    padding: 0;
+    border-radius: 0;
+    background-color: #3B99FC;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: none;
+    -webkit-transition: border-color ease-in-out .15s,color ease-in-out .15s,background ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,color ease-in-out .15s,background ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,color ease-in-out .15s,background ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,color ease-in-out .15s,background ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+}
+
+.header-search .search-bd .search-input {
+    width: 100%;
+    float: left;
+    border-radius: 0;
+    height: 30px;
+    line-height: 20px;
+    border: 1px solid #DEDEDE;
+    padding: 4px 10px;
+    background-color: #fff;
+    color: #333;
+    outline: none;
+    font-size: 14px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+}
+
+.header-menu {
+    float: right;
+    padding-right: 10px;
+}
+
+.header-menu .menu-item {
+    float: left;
+    margin-left: 10px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    position: relative;
+}
+
+/*导航栏*/
+
+.nav-box{
+    height: 40px;
+    background: #3B99FC;
+}
+
+.nav {
+    width: 1050px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    height: 40px;
+    /*z-index: 1900;*/
+}
+
+.nav .nav-item {
+    float: left;
+    width: 150px;
+}
+
+.nav .nav-item.nav-item-w1 {
+    width: 145px;
+}
+
+.nav .nav-item.active .nav-hd {
+    background: #2676e3;
+    color: #fff;
+}
+
+.nav .nav-hd {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    text-align: center;
+}

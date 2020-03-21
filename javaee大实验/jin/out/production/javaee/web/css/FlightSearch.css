@@ -1,0 +1,358 @@
+/*
+ * Copyright(c)2002-2019
+ *    项目名称:ARS55version
+ *    文件名称:FlightSearch.css
+ *    Date:2019/12/25 下午7:50
+ *    Author:高源
+ */
+
+/*
+ * *
+ *  * @author  高源
+ *  * @date  ${DATE} ${TIME}
+ *  * @version 1.0
+ *
+ */
+
+/*以下为外边框*/
+.zls-search {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    width: 1050px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.h40 {
+    height: 40px;
+}
+
+.flight-inquiries {
+    border: 0;
+    font-size: 14px;
+    font-family: 'Microsoft Yahei', Arial, sans-serif;
+}
+
+.fi-content {
+    position: relative;
+}
+
+.fi-contentBox {
+    min-height: 126px;
+    background-color: #dbeff9;
+}
+
+/*以下为上部的单程，往返*/
+.fi-contentBox .fi-content-tab {
+    height: 34px;
+    background-color: #dbeff9;
+    border-bottom: 1px solid #fff;
+}
+
+.fi-content-tab .fic-tab {
+    color: #000;
+    background-color: #fff;
+    height: 34px;
+    width: 160px;
+    line-height: 34px;
+    text-align: center;
+    float: left;
+    border: 1px solid #c0d5e4;
+    border-right: 0;
+    cursor: pointer;
+}
+
+
+.fi-content-tab .z-tabChecked {
+    color: #fff;
+    background-color: #008acb;
+    /* border: 1px solid #008acb; */
+}
+/*以下为查询的部分*/
+.searchIcon {
+    display: block;
+    background: url(../img/searchIcon.png) no-repeat;
+}
+
+.fi-flightInfo {
+    margin: 22px 26px 20px 26px;
+    margin-bottom: 0;
+}
+
+/*在这修改大小*/
+.fi-flightInfo .fI-single, .fi-flightInfo .fI-round {
+    width: 896px;
+}
+
+.fi-flightInfo .fI-thead {
+    font-size: 12px;
+    color: #666;
+    text-align: left;
+    width: 100%;
+    height: 22px;
+    line-height: 22px;
+}
+
+.fI-tr .fI-td {
+    float: left;
+    width: 25%;
+}
+
+.fI-single .fI-single-th {
+    color: #999;
+}
+
+.fi-flightInfo .fI-tbody .fI-tr, .fi-flightInfo .fI-tbody .fI-tr {
+    height: 50px;
+}
+
+.fI-tr .fI-td .fi-tds-icon {
+    width: 34px;
+    height: 34px;
+    background-color: #c6d1de;
+    position: relative;
+    border: 1px solid #c5dae8;
+    border-right: 0;
+}
+
+.fI-tr .fI-td .fi-tds-text {
+    line-height: 32px;
+    color: #000;
+    font-size: 14px;
+    background-color: #fff;
+    width: 160px;
+    position: relative;
+    border: 1px solid #c5dae8;
+}
+
+.fI-tr .fI-td .fi-tds-icon {
+    width: 34px;
+    height: 34px;
+    background-color: #c6d1de;
+    position: relative;
+    border: 1px solid #c5dae8;
+    border-right: 0;
+}
+
+.fI-td .fi-tds-icon, .fI-td .fi-tds-text, .fI-td .fi-tds-change {
+    float: left;
+}
+
+.ui-input-unit {
+    /*width: 100%;*/
+    position: relative;
+    display: inline-block;
+}
+
+.fI-tr .fI-td .fi-tds-text input {
+    border: 0;
+    padding: 0;
+    height: 34px;
+    line-height: 34px;
+    width: 100%;
+    text-indent: .8em;
+}
+
+.ui-city-input {
+    width: 12em;
+    font-size: 14px;
+    font-family: 'simsum';
+    padding: 5px 2px;
+    border: 1px solid #aaa;
+    vertical-align: top;
+    background-color: #fff;
+}
+
+.ui-city-helper {
+    margin-left: -25px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.input-helper {
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    margin-top: -10px;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    vertical-align: top;
+    z-index: 5;
+}
+
+.ui-city-helper .ico-city {
+    margin-top: 4px;
+    *margin-top: 5px;
+    vertical-align: top;
+    height: 14px;
+    width: 19px;
+    background-position: -24px -19px;
+}
+
+.ico-city, .ico-calendar {
+    display: none !important;
+}
+
+.ui-ico {
+    display: inline-block;
+    /**display: inline;*/
+    zoom: 1;
+    background: url(../img/calendar.png) no-repeat scroll 0 0 transparent;
+}
+
+.searchIcon-location {
+    width: 15px;
+    height: 20px;
+    background-position: -181px -60px;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -10px;
+}
+
+
+.searchIcon-from-fight{
+    width: 22px;
+    height: 15px;
+    background-position: -159px -14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -7.5px;
+    margin-left: -11px;
+}
+
+.fI-td .fi-tds-change {
+    margin-left: 1px;
+}
+
+.fI-td .fi-tds-change {
+    width: 26px;
+    height: 26px;
+    margin-top: 10px;
+    background: url(../img/searchIcon.png) no-repeat;
+    background-position: -42px -64px;
+    cursor: pointer;
+}
+
+.searchIcon-to-fight {
+    width: 22px;
+    height: 14px;
+    background-position: -246px -14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -7.5px;
+    margin-left: -11px;
+}
+
+.fI-tr .fI-td .fi-tds-icon {
+    width: 34px;
+    height: 34px;
+    background-color: #c6d1de;
+    position: relative;
+    border: 1px solid #c5dae8;
+    border-right: 0;
+}
+
+.searchIcon-calender {
+    width: 19px;
+    height: 20px;
+    background-position: -70px -14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -10px;
+    margin-left: -10px;
+}
+
+
+
+.ui-calendar-input {
+    width: 12em;
+    font-size: 14px;
+    font-family: 'simsum';
+    padding: 5px 2px;
+    border: 1px solid #aaa;
+    background-color: #fff !important;
+    cursor: text !important;
+}
+
+.ui-calendar-helper {
+    right: 8px;
+}
+
+.ui-calendar-helper .weekday {
+    font-size: 12px;
+    line-height: 16px;
+    height: 16px;
+    cursor: text;
+    overflow: hidden;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    text-align: left;
+    margin-top: 3px;
+    vertical-align: top;
+    padding: 0 3px 0 0;
+    _padding-top: 2px;
+    width: auto;
+    color: #898989;
+}
+
+.ui-calendar-helper .ico-calendar {
+    margin-top: 3px;
+    vertical-align: top;
+    height: 15px;
+    width: 15px;
+    background-position: -24px -2px;
+    line-height: 14px;
+    overflow: hidden;
+    font-size: 0;
+    cursor: pointer;
+}
+
+.ico-city, .ico-calendar {
+    display: none !important;
+}
+
+.fI-single .fI-td-last .fi-tds-icon {
+    background-color: #e4ecf2;
+}
+
+.fI-single .fI-td-last .fi-tds-text {
+    background-color: #f1f8fb;
+}
+
+input:disabled {
+    cursor: not-allowed;
+    background-color: rgb(235, 235, 228);
+}
+
+/*搜索按钮*/
+.fi-search {
+    position: absolute;
+    top: 80px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.fi-search {
+    text-align: center;
+}
+
+.fi-search button {
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    border-radius: 8px;
+    background-color: #e5004a;
+    color: lightblue;
+    font-weight: bold;
+    padding: 0;
+    border: 0;
+    margin: 0 auto;
+    cursor: pointer;
+}

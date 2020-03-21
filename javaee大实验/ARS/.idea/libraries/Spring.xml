@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="Spring" type="spring">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../spring5 核心包/spring-aop-5.2.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../spring5 核心包/spring-beans-5.2.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../spring5 核心包/spring-context-5.2.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../spring5 核心包/spring-core-5.2.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../spring5 核心包/spring-expression-5.2.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../spring5 核心包/spring-jdbc-5.2.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../spring5 核心包/spring-orm-5.2.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../spring5 核心包/spring-tx-5.2.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../spring5 核心包/spring-web-5.2.1.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

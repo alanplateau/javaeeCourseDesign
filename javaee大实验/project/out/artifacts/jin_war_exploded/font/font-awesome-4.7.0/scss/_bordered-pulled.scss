@@ -1,0 +1,41 @@
+/*!
+ * Copyright(c)2002-2019
+ *    项目名称:ARS55version
+ *    文件名称:_bordered-pulled.scss
+ *    Date:2019/12/25 下午7:50
+ *    Author:高源
+ */
+
+/*!
+ * *
+ *  * @author  高源
+ *  * @date  ${DATE} ${TIME}
+ *  * @version 1.0
+ *
+ */
+
+// Bordered & Pulled
+// -------------------------
+
+.#{$fa-css-prefix}-border {
+  padding: .2em .25em .15em;
+  border: solid .08em $fa-border-color;
+  border-radius: .1em;
+}
+
+.#{$fa-css-prefix}-pull-left { float: left; }
+.#{$fa-css-prefix}-pull-right { float: right; }
+
+.#{$fa-css-prefix} {
+  &.#{$fa-css-prefix}-pull-left { margin-right: .3em; }
+  &.#{$fa-css-prefix}-pull-right { margin-left: .3em; }
+}
+
+/* Deprecated as of 4.4.0 */
+.pull-right { float: right; }
+.pull-left { float: left; }
+
+.#{$fa-css-prefix} {
+  &.pull-left { margin-right: .3em; }
+  &.pull-right { margin-left: .3em; }
+}

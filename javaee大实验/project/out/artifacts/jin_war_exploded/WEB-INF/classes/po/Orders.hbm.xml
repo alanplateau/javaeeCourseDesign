@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="po.Orders" table="orders" schema="ars">
+        <id name="orderId" column="orderID"/>
+        <property name="passengerId" column="passengerID"/>
+        <many-to-one name="flight" class="po.Flight" lazy="false" cascade="all">
+            <column name="flightID"/>
+        </many-to-one>
+        <property name="ticketType" column="ticketType"/>
+        <property name="orderTime" column="orderTime"/>
+        <property name="orderStatus" column="orderStatus"/>
+        <property name="account" column="account"/>
+        <property name="idCard" column="IDCard"/>
+        <property name="name" column="name"/>
+        <property name="status" column="status"/>
+    </class>
+</hibernate-mapping>

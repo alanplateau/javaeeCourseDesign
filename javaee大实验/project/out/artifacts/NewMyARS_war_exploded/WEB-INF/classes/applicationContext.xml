@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd">
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/ars?useUnicode=true&amp;characterEncoding=UTF-8&amp;allowMultiQueries=true&amp;useSSL=false&amp;serverTimezone=GMT%2B8"/>
+        <property name="username" value="root"/>
+        <property name="password" value="jinjiaobo"/>
+    </bean>
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect"> org.hibernate.dialect.MySQLDialect </prop>
+                <prop key="hibernate.connection.release_mode">after_transaction</prop>
+                <prop key="hibernate.current_session_context_class">thread</prop>
+                <prop key="hibernate.connection.autocommit">true</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.format_sql">true</prop>
+            </props>
+        </property>
+        <property name="mappingResources">
+            <list>
+                <value>po/Airplane.hbm.xml</value>
+                <value>po/User.hbm.xml</value>
+                <value>po/Passenger.hbm.xml</value>
+                <value>po/Airport.hbm.xml</value>
+                <value>po/TicketInfo.hbm.xml</value>
+                <value>po/Order.hbm.xml</value>
+                <value>po/City.hbm.xml</value>
+                <value>po/Flight.hbm.xml</value>
+
+            </list>
+        </property>
+    </bean>
+    <bean id="baseDAO" class="dao.BaseHibernateDAO">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="userDAO" class="dao.UserDAO" parent="baseDAO" />
+    <bean id="passengerDAO" class="dao.PassengerDAO" parent="baseDAO" />
+    <bean id="flightDAO" class="dao.FlightDAO" parent="baseDAO" />
+    <bean id="airportDAO" class="dao.AirportDAO" parent="baseDAO" />
+    <bean id="airplaneDAO" class="dao.AirplaneDAO" parent="baseDAO" />
+    <bean id="cityDAO" class="dao.CityDAO" parent="baseDAO" />
+    <bean id="ticketInfoDAO" class="dao.TicketInfoDAO" parent="baseDAO" />
+    <bean id="orderDAO" class="dao.OrderDAO" parent="baseDAO" />
+
+
+    <bean id="operatorService" class="service.OperatorService">
+        <property name="userDAO" ref="userDAO" />
+        <property name="passengerDAO" ref="passengerDAO" />
+        <property name="flightDAO" ref="flightDAO" />
+        <property name="airportDAO" ref="airportDAO" />
+        <property name="airplaneDAO" ref="airplaneDAO" />
+        <property name="cityDAO" ref="cityDAO" />
+        <property name="ticketInfoDAO" ref="ticketInfoDAO" />
+        <property name="orderDAO" ref="orderDAO" />
+
+
+    </bean>
+    <bean id="operatorAction" class="action.OperatorAction" scope="prototype">
+        <property name="operatorService" ref="operatorService" />
+    </bean>
+
+    <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory">
+            <ref bean="sessionFactory" />
+        </property>
+    </bean>
+
+</beans>

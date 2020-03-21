@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="po.Airplane" table="airplane" schema="ARS">
+        <id name="airplaneId">
+            <column name="airplaneID" sql-type="varchar(20)"/>
+        </id>
+        <property name="airplaneType">
+            <column name="airplaneType" sql-type="varchar(20)" length="20" />
+        </property>
+        <property name="economyClassSeats">
+            <column name="economyClassSeats" sql-type="int(11)" />
+        </property>
+        <property name="firstClassSeats">
+            <column name="firstClassSeats" sql-type="int(11)" />
+        </property>
+        <property name="businessClassSeats">
+            <column name="businessClassSeats" sql-type="int(11)"/>
+        </property>
+        <!--在po.Flight类的映射表中产生名为airplaneID的外键-->
+        <set name="flights" inverse="true" cascade="all">
+            <key column="airplaneID"  />
+            <one-to-many class="po.Flight"/>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../ARS/ARS.iml" filepath="$PROJECT_DIR$/../ARS/ARS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../NewMyARS/NewMyARS.iml" filepath="$PROJECT_DIR$/../NewMyARS/NewMyARS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../jin/jin.iml" filepath="$PROJECT_DIR$/../jin/jin.iml" />
+    </modules>
+  </component>
+</project>

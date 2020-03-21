@@ -1,0 +1,551 @@
+<!--
+  ~ Copyright(c)2002-2019
+  ~    项目名称:ARS55version
+  ~    文件名称:index2.html
+  ~    Date:2019/12/25 下午10:20
+  ~    Author:高源
+  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link rel="stylesheet" href="font/font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/topBar.css">
+    <link rel="stylesheet" type="text/css" href="css/FlightSearch.css">
+    <link rel="stylesheet" type="text/css" href="css/City.css">
+    <link rel="stylesheet" type="text/css" href="css/FlightInfo.css">
+    <link rel="stylesheet" type="text/css" href="css/index2ImageChange.css"/>
+
+    <script language="javascript" type="text/javascript" src="js/My97DatePicker/WdatePicker.js"></script>
+    <script language="JavaScript" type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="js/City.js"></script>
+    <script language="JavaScript" type="text/javascript" src="js/imageChange.js"></script>
+    <script language="JavaScript" type="text/javascript" src="js/index2City.js"></script>
+</head>
+<body>
+<div class="page">
+    <div class="header">
+        <div class="wrapper">
+            <div class="header-con">
+                <h1 class="logo">
+                    <a href="index.html">工大航空</a>
+                </h1>
+                <div class="header-right">
+                    <div class="header-search">
+                        <div class="search-bd">
+                            <input type="text" class="search-input" id="search-input"
+                                   value="" placeholder="搜索车票/餐饮/常旅客/相关规章" auto-complete="new-password">
+                        </div>
+                        <a class="search-btn" href="javascript:;">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <ul class="header-menu">
+                        <li id="J-header-login" class="menu-item menu-login">
+                            <a name="g_href" data-type="2" data-href="resources/login.html" data-redirect="Y"
+                               href="javascript:;">登录</a>
+                            <a name="g_href" data-type="2" data-href="regist/init" data-redirect="Y" href="javascript:;"
+                               class="ml">注册</a>
+                        </li>
+                        <li id="J-header-logout" style="display: none;" class="menu-item menu-nav menu-login">
+                            您好，<a name="g_href" data-type="2" data-href="view/index.html" data-redirect="Y"
+                                  href="javascript:;" class="txt-primary menu-nav-my-hd"></a>
+                            &nbsp;|&nbsp;<a class="logout" href="javascript:;">退出</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="nav-box">
+            <ul class="nav">
+                <li class="nav-item nav-item-w1">
+                    <a name="g_href" href="" class="nav-hd">首页</a>
+                </li>
+                <li class="nav-item nav-item-w1 active">
+                    <a href="" class="nav-hd">车票</a>
+                </li>
+                <li class="nav-item nav-item-w1">
+                    <a name="g_href" href="" class="nav-hd">个人信息</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="imageChange">
+        <div class="zsl-query">
+            <div class="zsl-query-pos">
+                <div class="zsl-query-box tab-box" style="position:relative;z-index:101;">
+                    <ul class="nav-tabs">
+                        <li class="flight nav-tab current" data-index="0" otype="button" otitle="首页-预订行程" data-likev-tagname="首页-预订行程">
+                            <i class="fa fa-bell-o" aria-hidden="true"></i>
+                            预订行程
+                        </li>
+<!--                        <li class="nav-tab" data-index="1" otype="button" otitle="首页-行程服务" data-likev-tagname="首页-行程服务"><i class="service"></i>行程服务</li>-->
+<!--                        <li class="nav-tab" data-index="2" otype="button" otitle="首页-旅游度假" data-likev-tagname="首页-旅游度假"><i class="holiday"></i>旅游度假</li>-->
+<!--                        <li class="nav-tab" data-index="3" otype="button" otitle="首页-移动端" data-likev-tagname="首页-移动端"><i class="mobile"></i>移动端</li>-->
+                    </ul>
+                    <!--预订行程start-->
+                    <div class="zsl-query-con tab-pane flight tab-box">
+                        <div class="query-child-con tab-pane ticket">
+                            <div class="query-child-flightH roundTripChange">
+                                <div class="flightCheck fl">
+                                    <a href="#" class="hm-radio current" data-type="signle" data-value="1">单程</a>
+                                </div>
+                                <div class="flightCheck fl">
+                                    <a href="#" class="hm-radio" data-value="2">往返</a>
+                                </div>
+                            </div>
+                            <form action="flightSearchAction.action" method="get">
+                            <div class="query-child-search">
+                                <div class="search-line">
+                                    <div class="search-col-2 fl" style="position:relative;">
+                                        <label for="fDepCity" class="search-label">出发城市</label>
+                                        <div class="search-ctrls br">
+                                            <div class="search-input">
+                                                <div class="search-logo dep"></div>
+                                                <div class="ui-input-unit">
+                                                    <input type="text" name="fromCity" id="fDepCity" class="phInput zls-city-ipt fromcity ui-city-input" data-placeholder="全拼/简拼/汉字"
+                                                           autocomplete="off" style="color: rgb(137, 137, 137);">
+                                                    <div class="input-helper ui-city-helper"><span class="ui-ico ico-city "></span></div></div>
+                                                <input type="hidden" id="city1_code" name="city1_code">
+                                            </div>
+
+                                        </div>
+                                        <a href="#" class="zls-city-btn"></a>
+                                    </div>
+
+                                    <div class="search-col-2 fr">
+                                        <label for="fArrCity" class="search-label" style="margin-left:10px;">到达城市</label>
+                                        <div class="search-ctrls br" style="margin-left:10px;">
+                                            <div class="search-input">
+                                                <div class="search-logo arr"></div>
+                                                <div class="ui-input-unit">
+                                                    <input type="text" name="toCity" id="fArrCity" class="phInput zls-city-ipt tocity ui-city-input" data-placeholder="全拼/简拼/汉字" autocomplete="off" style="color: rgb(137, 137, 137);"><div class="input-helper ui-city-helper"><span class="ui-ico ico-city "></span></div></div>
+                                                <input type="hidden" id="city2_code" name="city2_code">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-line">
+                                    <div class="fl search-col-2">
+                                        <label for="fDepDate" class="search-label">出发日期</label>
+                                        <div class="search-ctrls br">
+                                            <div class="search-input">
+                                                <div class="search-logo calendar"></div>
+                                                <div class="ui-input-unit">
+                                                    <input type="text" name="departureTime" id="fDepDate" class="phInput zls-date-ipt fromdate ui-calendar-input"
+                                                           data-placeholder="全拼/简拼/汉字" readonly="" style="color: rgb(137, 137, 137);" onclick="WdatePicker({el:this,dateFmt:'yyyy-MM-dd '})">
+                                                    <div class="input-helper ui-calendar-helper">
+                                                    <span class="weekday">星期三</span><span class="ui-ico ico-calendar"></span></div></div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="fr search-col-2 roundTrip" id="searchReturnDate">
+                                        <label for="fArrDate" class="search-label" style="margin-left:10px;">返回日期</label>
+                                        <div class="search-ctrls br" style="margin-left:10px;">
+                                            <div class="search-input disabled">
+                                                <div class="search-logo calendar"></div>
+                                                <div class="ui-input-unit"><input type="text" name="fArrDate" class="phInput zls-date-ipt todate ui-calendar-input" disabled="disabled" readonly="" id="fArrDate" value="全拼/简拼/汉字" style="color: rgb(137, 137, 137);"><div class="input-helper ui-calendar-helper"><span class="weekday">星期三</span><span class="ui-ico ico-calendar"></span></div></div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-line search-bottom">
+<!--                                    <div class="fl searchProprice">-->
+<!--                                        <a href="https://www.csair.com/cn/online/cki/index.shtml" target="_blank" otype="button" otitle="首页-预订行程-机票-行程服务" data-likev-tagname="首页-预订行程-机票-行程服务">-->
+<!--                                            <i></i>行程服务<span class="red-font">荐</span> </a>-->
+<!--                                    </div>-->
+<!--                                    <a href="#" class="fr searchBtn searchFlight" otype="button" otitle="首页-预订行程-机票-立即查询" data-likev-tagname="首页-预订行程-机票-立即查询" data-likev-info="{&quot;CS1&quot;:&quot;官网首页&quot;,&quot;CS2&quot;:&quot;航班查询&quot;}">-->
+<!--                                        立即查询-->
+<!--                                    </a>-->
+                                    <button class="fr searchBtn searchFlight">立即查询</button>
+                                </div>
+                            </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+                    <!--预订行程end-->
+                </div>
+            </div>
+        </div>
+        <ol class="flex-control-nav flex-control-paging">
+            <li><a class="" data-id="1">南航会员日</a></li>
+            <li><a class="" data-id="2">年终盛典</a></li>
+            <li><a class="flex-active" data-id="3">大兴交通大礼包</a></li>
+            <li><a class="" data-id="4">南航全舱抢票</a></li>
+            <li><a class="" data-id="5">12月热卖情报</a></li>
+            <li><a class="" data-id="6">12月潮玩推荐</a></li>
+        </ol>
+    </div>
+    <div id="ui-city-unit">
+        <div id="ui-city-box" class="ui-tab-bar header"><a class="ui-tab ui-tab-on" data-index="0">中国国内（含港澳台地区）</a><a
+                class="ui-tab" data-index="1">国际</a><a class="ui-tab" data-index="2" style="display: none;">国际</a></div>
+        <div id="ui-city-box-tab-content" class="ui-tab-box header-box">
+            <div class="ui-tab-content tab0 ui-content-on">
+                <div id="ui-city-area-0" class="ui-tab-bar group-lv">
+                    <a class="ui-tab ui-tab-on" data-index="1" id="index1">ABCDE</a>
+                    <a class="ui-tab" data-index="2" id="index2">FGHIJ</a>
+                    <a class="ui-tab" data-index="3" id="index3">KLMNP</a>
+                    <a class="ui-tab" data-index="4" id="index4">QRSTU</a>
+                    <a class="ui-tab" data-index="5" id="index5" >VWXYZ</a>
+                </div>
+                <div id="ui-city-area-0-tab-content" class="ui-tab-box group-lv-box">
+                    <div class="ui-tab-content tab1 ui-content-on" >
+                        <div class="city-section">
+                            <div class="letter">A</div>
+                            <div class="ui-city-list">
+                                <a class="ui-city-link city-YIE" data-code="YIE" title="阿尔山" isinter="N">阿尔山</a>
+                                <a class="ui-city-link city-AKA" data-code="AKA" title="安康" isinter="N">安康</a>
+                                <a class="ui-city-link city-AKU" data-code="AKU" title="阿克苏" isinter="N">阿克苏</a>
+                                <a class="ui-city-link city-NGQ" data-code="NGQ" title="阿里" isinter="N">阿里</a>
+                                <a class="ui-city-link city-AXF" data-code="AXF" title="阿拉善盟" isinter="N">阿拉善盟</a>
+                                <a class="ui-city-link city-AAT" data-code="AAT" title="阿勒泰" isinter="N">阿勒泰</a>
+                                <a class="ui-city-link city-AQG" data-code="AQG" title="安庆" isinter="N">安庆</a>
+                                <a class="ui-city-link city-AOG" data-code="AOG" title="鞍山" isinter="N">鞍山</a>
+                                <a class="ui-city-link city-AVA" data-code="AVA" title="安顺" isinter="N">安顺</a>
+                            </div>
+                        </div>
+                        <div class="city-section">
+                            <div class="letter">B</div>
+                            <div class="ui-city-list">
+                                <a class="ui-city-link city-BAR" data-code="BAR" title="博鳌" isinter="N">博鳌</a>
+                                <a class="ui-city-link city-BHY" data-code="BHY" title="北海" isinter="N">北海</a>
+                                <a class="ui-city-link city-BFJ" data-code="BFJ" title="毕节" isinter="N">毕节</a>
+                                <a class="ui-city-link city-PKX" data-code="PKX" title="北京大兴" isinter="N">北京大兴</a>
+                                <a class="ui-city-link city-PEK" data-code="PEK" title="北京首都" isinter="N">北京首都</a>
+                                <a class="ui-city-link city-BPL" data-code="BPL" title="博乐" isinter="N">博乐</a>
+                                <a class="ui-city-link city-AEB" data-code="AEB" title="百色" isinter="N">百色</a>
+                                <a class="ui-city-link city-BSD" data-code="BSD" title="保山" isinter="N">保山</a>
+                                <a class="ui-city-link city-BAV" data-code="BAV" title="包头" isinter="N">包头</a>
+                            </div>
+                        </div>
+                        <div class="city-section">
+                            <div class="letter">C</div>
+                            <div class="ui-city-list">
+                                <a class="ui-city-link city-BPX" data-code="BPX" title="昌都" isinter="N">昌都</a>
+                                <a class="ui-city-link city-CGD" data-code="CGD" title="常德" isinter="N">常德</a>
+                                <a class="ui-city-link city-CTU" data-code="CTU" title="成都" isinter="N">成都</a>
+                                <a class="ui-city-link city-CIF" data-code="CIF" title="赤峰" isinter="N">赤峰</a>
+                                <a class="ui-city-link city-CHG" data-code="CHG" title="朝阳" isinter="N">朝阳</a>
+                                <a class="ui-city-link city-CWJ" data-code="CWJ" title="沧源" isinter="N">沧源</a>
+                                <a class="ui-city-link city-CZX" data-code="CZX" title="常州" isinter="N">常州</a>
+                                <a class="ui-city-link city-JUH" data-code="JUH" title="池州" isinter="N">池州</a>
+                                <a class="ui-city-link city-NBS" data-code="NBS" title="长白山" isinter="N">长白山</a>
+                                <a class="ui-city-link city-CGQ" data-code="CGQ" title="长春" isinter="N">长春</a>
+                                <a class="ui-city-link city-CKG" data-code="CKG" title="重庆" isinter="N">重庆</a>
+                                <a class="ui-city-link city-CSX" data-code="CSX" title="长沙" isinter="N">长沙</a>
+                                <a class="ui-city-link city-CIH" data-code="CIH" title="长治" isinter="N">长治</a>
+                            </div>
+                        </div>
+                        <div class="city-section">
+                            <div class="letter">D</div>
+                            <div class="ui-city-list">
+                                <a class="ui-city-link city-DAA" data-code="DAA" title="大安" isinter="N">大安</a>
+                                <a class="ui-city-link city-DCY" data-code="DCY" title="稻城" isinter="N">稻城</a>
+                                <a class="ui-city-link city-DDG" data-code="DDG" title="丹东" isinter="N">丹东</a>
+                                <a class="ui-city-link city-DDB" data-code="DDB" title="东莞" isinter="N">东莞</a>
+                                <a class="ui-city-link city-DNH" data-code="DNH" title="敦煌" isinter="N">敦煌</a>
+                                <a class="ui-city-link city-DLC" data-code="DLC" title="大连" isinter="N">大连</a>
+                                <a class="ui-city-link city-DLU" data-code="DLU" title="大理" isinter="N">大理</a>
+                                <a class="ui-city-link city-HXD" data-code="HXD" title="德令哈" isinter="N">德令哈</a>
+                                <a class="ui-city-link city-DIG" data-code="DIG" title="迪庆" isinter="N">迪庆</a>
+                                <a class="ui-city-link city-DQA" data-code="DQA" title="大庆" isinter="N">大庆</a>
+                                <a class="ui-city-link city-DAT" data-code="DAT" title="大同" isinter="N">大同</a>
+                                <a class="ui-city-link city-DOY" data-code="DOY" title="东营" isinter="N">东营</a>
+                                <a class="ui-city-link city-DAX" data-code="DAX" title="达州" isinter="N">达州</a>
+                            </div>
+                        </div>
+                        <div class="city-section">
+                            <div class="letter">E</div>
+                            <div class="ui-city-list">
+                                <a class="ui-city-link city-DSN" data-code="DSN" title="鄂尔多斯" isinter="N">鄂尔多斯</a>
+                                <a class="ui-city-link city-EJN" data-code="EJN" title="额济纳旗" isinter="N">额济纳旗</a>
+                                <a class="ui-city-link city-ERL" data-code="ERL" title="二连浩特" isinter="N">二连浩特</a>
+                                <a class="ui-city-link city-ENH" data-code="ENH" title="恩施" isinter="N">恩施</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-tab-content tab2">
+                        <div class="city-section">
+                            <div class="letter">F</div>
+                            <div class="ui-city-list"><a class="ui-city-link city-NDH" data-code="NDH" title="佛山(顺德)"
+                                                         isinter="N">佛山(顺德)</a><a class="ui-city-link city-FUG"
+                                                                                  data-code="FUG" title="阜阳"
+                                                                                  isinter="N">阜阳</a><a
+                                    class="ui-city-link city-FYJ" data-code="FYJ" title="抚远" isinter="N">抚远</a><a
+                                    class="ui-city-link city-FYN" data-code="FYN" title="富蕴" isinter="N">富蕴</a><a
+                                    class="ui-city-link city-FOC" data-code="FOC" title="福州" isinter="N">福州</a></div>
+                        </div>
+                        <div class="city-section">
+                            <div class="letter">G</div>
+                            <div class="ui-city-list"><a class="ui-city-link city-CAN" data-code="CAN" title="广州"
+                                                         isinter="N">广州</a><a class="ui-city-link city-GOQ" data-code="GOQ"
+                                                                              title="格尔木" isinter="N">格尔木</a><a
+                                    class="ui-city-link city-GHN" data-code="GHN" title="广汉" isinter="N">广汉</a><a
+                                    class="ui-city-link city-GMQ" data-code="GMQ" title="果洛" isinter="N">果洛</a><a
+                                    class="ui-city-link city-KWL" data-code="KWL" title="桂林" isinter="N">桂林</a><a
+                                    class="ui-city-link city-GYS" data-code="GYS" title="广元" isinter="N">广元</a><a
+                                    class="ui-city-link city-GYU" data-code="GYU" title="固原" isinter="N">固原</a><a
+                                    class="ui-city-link city-KWE" data-code="KWE" title="贵阳" isinter="N">贵阳</a><a
+                                    class="ui-city-link city-KOW" data-code="KOW" title="赣州" isinter="N">赣州</a></div>
+                        </div>
+                        <div class="city-section">
+                            <div class="letter">H</div>
+                            <div class="ui-city-list"><a class="ui-city-link city-HIA" data-code="HIA" title="淮安"
+                                                         isinter="N">淮安</a><a class="ui-city-link city-HCJ" data-code="HCJ"
+                                                                              title="河池" isinter="N">河池</a><a
+                                    class="ui-city-link city-HDG" data-code="HDG" title="邯郸" isinter="N">邯郸</a><a
+                                    class="ui-city-link city-HRB" data-code="HRB" title="哈尔滨" isinter="N">哈尔滨</a><a
+                                    class="ui-city-link city-HFE" data-code="HFE" title="合肥" isinter="N">合肥</a><a
+                                    class="ui-city-link city-HEK" data-code="HEK" title="黑河" isinter="N">黑河</a><a
+                                    class="ui-city-link city-HJJ" data-code="HJJ" title="怀化" isinter="N">怀化</a><a
+                                    class="ui-city-link city-HET" data-code="HET" title="呼和浩特" isinter="N">呼和浩特</a><a
+                                    class="ui-city-link city-HAK" data-code="HAK" title="海口" isinter="N">海口</a><a
+                                    class="ui-city-link city-HLD" data-code="HLD" title="海拉尔" isinter="N">海拉尔</a><a
+                                    class="ui-city-link city-HMI" data-code="HMI" title="哈密" isinter="N">哈密</a><a
+                                    class="ui-city-link city-TXN" data-code="TXN" title="黄山" isinter="N">黄山</a><a
+                                    class="ui-city-link city-HTN" data-code="HTN" title="和田" isinter="N">和田</a><a
+                                    class="ui-city-link city-AHJ" data-code="AHJ" title="红原" isinter="N">红原</a><a
+                                    class="ui-city-link city-HNY" data-code="HNY" title="衡阳" isinter="N">衡阳</a><a
+                                    class="ui-city-link city-HGH" data-code="HGH" title="杭州" isinter="N">杭州</a><a
+                                    class="ui-city-link city-HUZ" data-code="HUZ" title="惠州" isinter="N">惠州</a><a
+                                    class="ui-city-link city-HZG" data-code="HZG" title="汉中" isinter="N">汉中</a></div>
+                        </div>
+                        <div class="city-section">
+                            <div class="letter">J</div>
+                            <div class="ui-city-list"><a class="ui-city-link city-JCH" data-code="JCH" title="金昌"
+                                                         isinter="N">金昌</a><a class="ui-city-link city-JDZ" data-code="JDZ"
+                                                                              title="景德镇" isinter="N">景德镇</a><a
+                                    class="ui-city-link city-JGD" data-code="JGD" title="加格达奇" isinter="N">加格达奇</a><a
+                                    class="ui-city-link city-JGS" data-code="JGS" title="井冈山" isinter="N">井冈山</a><a
+                                    class="ui-city-link city-JIU" data-code="JIU" title="九江" isinter="N">九江</a><a
+                                    class="ui-city-link city-JJN" data-code="JJN" title="晋江" isinter="N">晋江</a><a
+                                    class="ui-city-link city-JBD" data-code="JBD" title="江门" isinter="N">江门</a><a
+                                    class="ui-city-link city-JMU" data-code="JMU" title="佳木斯" isinter="N">佳木斯</a><a
+                                    class="ui-city-link city-JNG" data-code="JNG" title="济宁" isinter="N">济宁</a><a
+                                    class="ui-city-link city-TNA" data-code="TNA" title="济南" isinter="N">济南</a><a
+                                    class="ui-city-link city-JSJ" data-code="JSJ" title="建三江" isinter="N">建三江</a><a
+                                    class="ui-city-link city-JXA" data-code="JXA" title="鸡西" isinter="N">鸡西</a><a
+                                    class="ui-city-link city-SWA" data-code="SWA" title="揭阳" isinter="N">揭阳</a><a
+                                    class="ui-city-link city-JGN" data-code="JGN" title="嘉峪关" isinter="N">嘉峪关</a><a
+                                    class="ui-city-link city-JNZ" data-code="JNZ" title="锦州" isinter="N">锦州</a><a
+                                    class="ui-city-link city-SHS" data-code="SHS" title="荆州" isinter="N">荆州</a><a
+                                    class="ui-city-link city-JZH" data-code="JZH" title="九寨沟" isinter="N">九寨沟</a></div>
+                        </div>
+                    </div>
+                    <div class="ui-tab-content tab3">
+                        <div class="city-section">
+                            <div class="letter">K</div>
+                            <div class="ui-city-list"><a class="ui-city-link city-KCA" data-code="KCA" title="库车"
+                                                         isinter="N">库车</a><a class="ui-city-link city-KGT" data-code="KGT"
+                                                                              title="康定" isinter="N">康定</a><a
+                                    class="ui-city-link city-KRL" data-code="KRL" title="库尔勒" isinter="N">库尔勒</a><a
+                                    class="ui-city-link city-KJH" data-code="KJH" title="凯里" isinter="N">凯里</a><a
+                                    class="ui-city-link city-KRY" data-code="KRY" title="克拉玛依" isinter="N">克拉玛依</a><a
+                                    class="ui-city-link city-KMG" data-code="KMG" title="昆明" isinter="N">昆明</a><a
+                                    class="ui-city-link city-KJI" data-code="KJI" title="喀纳斯" isinter="N">喀纳斯</a><a
+                                    class="ui-city-link city-KHG" data-code="KHG" title="喀什" isinter="N">喀什</a></div>
+                        </div>
+                        <div class="city-section">
+                            <div class="letter">L</div>
+                            <div class="ui-city-list"><a class="ui-city-link city-LLB" data-code="LLB" title="荔波"
+                                                         isinter="N">荔波</a><a class="ui-city-link city-JMJ" data-code="JMJ"
+                                                                              title="澜沧" isinter="N">澜沧</a><a
+                                    class="ui-city-link city-LNJ" data-code="LNJ" title="临沧" isinter="N">临沧</a><a
+                                    class="ui-city-link city-LFQ" data-code="LFQ" title="临汾" isinter="N">临汾</a><a
+                                    class="ui-city-link city-NLH" data-code="NLH" title="泸沽湖" isinter="N">泸沽湖</a><a
+                                    class="ui-city-link city-LJG" data-code="LJG" title="丽江" isinter="N">丽江</a><a
+                                    class="ui-city-link city-LLV" data-code="LLV" title="吕梁" isinter="N">吕梁</a><a
+                                    class="ui-city-link city-LNL" data-code="LNL" title="陇南" isinter="N">陇南</a><a
+                                    class="ui-city-link city-HZH" data-code="HZH" title="黎平" isinter="N">黎平</a><a
+                                    class="ui-city-link city-LPF" data-code="LPF" title="六盘水" isinter="N">六盘水</a><a
+                                    class="ui-city-link city-LXA" data-code="LXA" title="拉萨" isinter="N">拉萨</a><a
+                                    class="ui-city-link city-LCX" data-code="LCX" title="龙岩" isinter="N">龙岩</a><a
+                                    class="ui-city-link city-LYA" data-code="LYA" title="洛阳" isinter="N">洛阳</a><a
+                                    class="ui-city-link city-LYI" data-code="LYI" title="临沂" isinter="N">临沂</a><a
+                                    class="ui-city-link city-LYG" data-code="LYG" title="连云港" isinter="N">连云港</a><a
+                                    class="ui-city-link city-LHW" data-code="LHW" title="兰州" isinter="N">兰州</a><a
+                                    class="ui-city-link city-LZH" data-code="LZH" title="柳州" isinter="N">柳州</a><a
+                                    class="ui-city-link city-LZO" data-code="LZO" title="泸州" isinter="N">泸州</a><a
+                                    class="ui-city-link city-LZY" data-code="LZY" title="林芝" isinter="N">林芝</a></div>
+                        </div>
+                        <div class="city-section">
+                            <div class="letter">M</div>
+                            <div class="ui-city-list"><a class="ui-city-link city-MDG" data-code="MDG" title="牡丹江"
+                                                         isinter="N">牡丹江</a><a class="ui-city-link city-OHE" data-code="OHE"
+                                                                               title="漠河" isinter="N">漠河</a><a
+                                    class="ui-city-link city-LUM" data-code="LUM" title="芒市" isinter="N">芒市</a><a
+                                    class="ui-city-link city-MIG" data-code="MIG" title="绵阳" isinter="N">绵阳</a><a
+                                    class="ui-city-link city-MXZ" data-code="MXZ" title="梅州" isinter="N">梅州</a><a
+                                    class="ui-city-link city-NZH" data-code="NZH" title="满洲里" isinter="N">满洲里</a></div>
+                        </div>
+                        <div class="city-section">
+                            <div class="letter">N</div>
+                            <div class="ui-city-list"><a class="ui-city-link city-NGB" data-code="NGB" title="宁波"
+                                                         isinter="N">宁波</a><a class="ui-city-link city-KHN" data-code="KHN"
+                                                                              title="南昌" isinter="N">南昌</a><a
+                                    class="ui-city-link city-NAO" data-code="NAO" title="南充" isinter="N">南充</a><a
+                                    class="ui-city-link city-NKG" data-code="NKG" title="南京" isinter="N">南京</a><a
+                                    class="ui-city-link city-NLH" data-code="NLH" title="宁蒗" isinter="N">宁蒗</a><a
+                                    class="ui-city-link city-NLT" data-code="NLT" title="那拉提" isinter="N">那拉提</a><a
+                                    class="ui-city-link city-NNG" data-code="NNG" title="南宁" isinter="N">南宁</a><a
+                                    class="ui-city-link city-NTG" data-code="NTG" title="南通" isinter="N">南通</a><a
+                                    class="ui-city-link city-NNY" data-code="NNY" title="南阳" isinter="N">南阳</a></div>
+                        </div>
+                        <div class="city-section">
+                            <div class="letter">P</div>
+                            <div class="ui-city-list"><a class="ui-city-link city-SYM" data-code="SYM" title="普洱"
+                                                         isinter="N">普洱</a><a class="ui-city-link city-PZI" data-code="PZI"
+                                                                              title="攀枝花" isinter="N">攀枝花</a></div>
+                        </div>
+                    </div>
+                    <div class="ui-tab-content tab4">
+                        <div class="city-section">
+                            <div class="letter">Q</div>
+                            <div class="ui-city-list"><a class="ui-city-link city-TAO" data-code="TAO" title="青岛"
+                                                         isinter="N">青岛</a><a class="ui-city-link city-BPE" data-code="BPE"
+                                                                              title="秦皇岛" isinter="N">秦皇岛</a><a
+                                    class="ui-city-link city-JIQ" data-code="JIQ" title="黔江" isinter="N">黔江</a><a
+                                    class="ui-city-link city-IQM" data-code="IQM" title="且末" isinter="N">且末</a><a
+                                    class="ui-city-link city-NDG" data-code="NDG" title="齐齐哈尔" isinter="N">齐齐哈尔</a><a
+                                    class="ui-city-link city-IQN" data-code="IQN" title="庆阳" isinter="N">庆阳</a></div>
+                        </div>
+                        <div class="city-section">
+                            <div class="letter">R</div>
+                            <div class="ui-city-list"><a class="ui-city-link city-RKZ" data-code="RKZ" title="日喀则"
+                                                         isinter="N">日喀则</a><a class="ui-city-link city-RQA" data-code="RQA"
+                                                                               title="若羌" isinter="N">若羌</a><a
+                                    class="ui-city-link city-RIZ" data-code="RIZ" title="日照" isinter="N">日照</a></div>
+                        </div>
+                        <div class="city-section">
+                            <div class="letter">S</div>
+                            <div class="ui-city-list"><a class="ui-city-link city-SHA" data-code="SHA" title="上海虹桥"
+                                                         isinter="N">上海虹桥</a><a class="ui-city-link city-PVG"
+                                                                                data-code="PVG" title="上海浦东" isinter="N">上海浦东</a><a
+                                    class="ui-city-link city-SZX" data-code="SZX" title="深圳" isinter="N">深圳</a><a
+                                    class="ui-city-link city-QSZ" data-code="QSZ" title="莎车" isinter="N">莎车</a><a
+                                    class="ui-city-link city-SHF" data-code="SHF" title="石河子" isinter="N">石河子</a><a
+                                    class="ui-city-link city-SJW" data-code="SJW" title="石家庄" isinter="N">石家庄</a><a
+                                    class="ui-city-link city-SQJ" data-code="SQJ" title="三明" isinter="N">三明</a><a
+                                    class="ui-city-link city-HPG" data-code="HPG" title="神农架" isinter="N">神农架</a><a
+                                    class="ui-city-link city-SHR" data-code="SHR" title="上饶" isinter="N">上饶</a><a
+                                    class="ui-city-link city-SWA" data-code="SWA" title="汕头" isinter="N">汕头</a><a
+                                    class="ui-city-link city-SHE" data-code="SHE" title="沈阳" isinter="N">沈阳</a><a
+                                    class="ui-city-link city-SYX" data-code="SYX" title="三亚" isinter="N">三亚</a><a
+                                    class="ui-city-link city-WDS" data-code="WDS" title="十堰" isinter="N">十堰</a><a
+                                    class="ui-city-link city-WGN" data-code="WGN" title="邵阳" isinter="N">邵阳</a><a
+                                    class="ui-city-link city-YSQ" data-code="YSQ" title="松原" isinter="N">松原</a></div>
+                        </div>
+                        <div class="city-section">
+                            <div class="letter">T</div>
+                            <div class="ui-city-list"><a class="ui-city-link city-TCG" data-code="TCG" title="塔城"
+                                                         isinter="N">塔城</a><a class="ui-city-link city-TCZ" data-code="TCZ"
+                                                                              title="腾冲" isinter="N">腾冲</a><a
+                                    class="ui-city-link city-TNH" data-code="TNH" title="通化" isinter="N">通化</a><a
+                                    class="ui-city-link city-TSN" data-code="TSN" title="天津" isinter="N">天津</a><a
+                                    class="ui-city-link city-TGO" data-code="TGO" title="通辽" isinter="N">通辽</a><a
+                                    class="ui-city-link city-TLQ" data-code="TLQ" title="吐鲁番" isinter="N">吐鲁番</a><a
+                                    class="ui-city-link city-TWC" data-code="TWC" title="图木舒克" isinter="N">图木舒克</a><a
+                                    class="ui-city-link city-TEN" data-code="TEN" title="铜仁" isinter="N">铜仁</a><a
+                                    class="ui-city-link city-THQ" data-code="THQ" title="天水" isinter="N">天水</a><a
+                                    class="ui-city-link city-TVS" data-code="TVS" title="唐山" isinter="N">唐山</a><a
+                                    class="ui-city-link city-TYN" data-code="TYN" title="太原" isinter="N">太原</a><a
+                                    class="ui-city-link city-HYN" data-code="HYN" title="台州" isinter="N">台州</a><a
+                                    class="ui-city-link city-YTY" data-code="YTY" title="泰州" isinter="N">泰州</a></div>
+                        </div>
+                    </div>
+                    <div class="ui-tab-content tab5">
+                        <div class="city-section">
+                            <div class="letter">W</div>
+                            <div class="ui-city-list"><a class="ui-city-link city-WEF" data-code="WEF" title="潍坊"
+                                                         isinter="N">潍坊</a><a class="ui-city-link city-WEH" data-code="WEH"
+                                                                              title="威海" isinter="N">威海</a><a
+                                    class="ui-city-link city-WUA" data-code="WUA" title="乌海" isinter="N">乌海</a><a
+                                    class="ui-city-link city-WUH" data-code="WUH" title="武汉" isinter="N">武汉</a><a
+                                    class="ui-city-link city-UCB" data-code="UCB" title="乌兰察布" isinter="N">乌兰察布</a><a
+                                    class="ui-city-link city-HLH" data-code="HLH" title="乌兰浩特" isinter="N">乌兰浩特</a><a
+                                    class="ui-city-link city-URC" data-code="URC" title="乌鲁木齐" isinter="N">乌鲁木齐</a><a
+                                    class="ui-city-link city-WNH" data-code="WNH" title="文山" isinter="N">文山</a><a
+                                    class="ui-city-link city-WSK" data-code="WSK" title="巫山" isinter="N">巫山</a><a
+                                    class="ui-city-link city-WUX" data-code="WUX" title="无锡" isinter="N">无锡</a><a
+                                    class="ui-city-link city-WUS" data-code="WUS" title="武夷山" isinter="N">武夷山</a><a
+                                    class="ui-city-link city-WNZ" data-code="WNZ" title="温州" isinter="N">温州</a><a
+                                    class="ui-city-link city-WUZ" data-code="WUZ" title="梧州" isinter="N">梧州</a><a
+                                    class="ui-city-link city-WXN" data-code="WXN" title="万州" isinter="N">万州</a></div>
+                        </div>
+                        <div class="city-section">
+                            <div class="letter">X</div>
+                            <div class="ui-city-list"><a class="ui-city-link city-XMN" data-code="XMN" title="厦门"
+                                                         isinter="N">厦门</a><a class="ui-city-link city-XIY" data-code="XIY"
+                                                                              title="西安" isinter="N">西安</a><a
+                                    class="ui-city-link city-XIC" data-code="XIC" title="西昌" isinter="N">西昌</a><a
+                                    class="ui-city-link city-GXH" data-code="GXH" title="夏河" isinter="N">夏河</a><a
+                                    class="ui-city-link city-XIL" data-code="XIL" title="锡林浩特" isinter="N">锡林浩特</a><a
+                                    class="ui-city-link city-XNN" data-code="XNN" title="西宁" isinter="N">西宁</a><a
+                                    class="ui-city-link city-JHG" data-code="JHG" title="西双版纳" isinter="N">西双版纳</a><a
+                                    class="ui-city-link city-ACX" data-code="ACX" title="兴义" isinter="N">兴义</a><a
+                                    class="ui-city-link city-XAI" data-code="XAI" title="信阳" isinter="N">信阳</a><a
+                                    class="ui-city-link city-XFN" data-code="XFN" title="襄阳" isinter="N">襄阳</a><a
+                                    class="ui-city-link city-WUT" data-code="WUT" title="忻州" isinter="N">忻州</a><a
+                                    class="ui-city-link city-XUZ" data-code="XUZ" title="徐州" isinter="N">徐州</a></div>
+                        </div>
+                        <div class="city-section">
+                            <div class="letter">Y</div>
+                            <div class="ui-city-list"><a class="ui-city-link city-ENY" data-code="ENY" title="延安"
+                                                         isinter="N">延安</a><a class="ui-city-link city-YBP" data-code="YBP"
+                                                                              title="宜宾" isinter="N">宜宾</a><a
+                                    class="ui-city-link city-INC" data-code="INC" title="银川" isinter="N">银川</a><a
+                                    class="ui-city-link city-LDS" data-code="LDS" title="伊春" isinter="N">伊春</a><a
+                                    class="ui-city-link city-YCU" data-code="YCU" title="运城" isinter="N">运城</a><a
+                                    class="ui-city-link city-YIC" data-code="YIC" title="宜春" isinter="N">宜春</a><a
+                                    class="ui-city-link city-YIH" data-code="YIH" title="宜昌" isinter="N">宜昌</a><a
+                                    class="ui-city-link city-YNZ" data-code="YNZ" title="盐城" isinter="N">盐城</a><a
+                                    class="ui-city-link city-YNJ" data-code="YNJ" title="延吉" isinter="N">延吉</a><a
+                                    class="ui-city-link city-YKH" data-code="YKH" title="营口" isinter="N">营口</a><a
+                                    class="ui-city-link city-UYN" data-code="UYN" title="榆林" isinter="N">榆林</a><a
+                                    class="ui-city-link city-YIN" data-code="YIN" title="伊宁" isinter="N">伊宁</a><a
+                                    class="ui-city-link city-YUS" data-code="YUS" title="玉树" isinter="N">玉树</a><a
+                                    class="ui-city-link city-YNT" data-code="YNT" title="烟台" isinter="N">烟台</a><a
+                                    class="ui-city-link city-YIW" data-code="YIW" title="义乌" isinter="N">义乌</a><a
+                                    class="ui-city-link city-YYA" data-code="YYA" title="岳阳" isinter="N">岳阳</a><a
+                                    class="ui-city-link city-LLF" data-code="LLF" title="永州" isinter="N">永州</a><a
+                                    class="ui-city-link city-YTY" data-code="YTY" title="扬州" isinter="N">扬州</a></div>
+                        </div>
+                        <div class="city-section">
+                            <div class="letter">Z</div>
+                            <div class="ui-city-list"><a class="ui-city-link city-MFM" data-code="MFM" title="中国澳门"
+                                                         isinter="Y">中国澳门</a><a class="ui-city-link city-KHH"
+                                                                                data-code="KHH" title="中国高雄" isinter="Y">中国高雄</a><a
+                                    class="ui-city-link city-KNH" data-code="KNH" title="中国金门" isinter="Y">中国金门</a><a
+                                    class="ui-city-link city-TPE" data-code="TPE" title="中国台北" isinter="Y">中国台北</a><a
+                                    class="ui-city-link city-RMQ" data-code="RMQ" title="中国台中" isinter="Y">中国台中</a><a
+                                    class="ui-city-link city-HKG" data-code="HKG" title="中国香港" isinter="Y">中国香港</a><a
+                                    class="ui-city-link city-ZUH" data-code="ZUH" title="珠海" isinter="N">珠海</a><a
+                                    class="ui-city-link city-ZHA" data-code="ZHA" title="湛江" isinter="N">湛江</a><a
+                                    class="ui-city-link city-DYG" data-code="DYG" title="张家界" isinter="N">张家界</a><a
+                                    class="ui-city-link city-ZQZ" data-code="ZQZ" title="张家口" isinter="N">张家口</a><a
+                                    class="ui-city-link city-NZL" data-code="NZL" title="扎兰屯" isinter="N">扎兰屯</a><a
+                                    class="ui-city-link city-HHS" data-code="HHS" title="中山" isinter="N">中山</a><a
+                                    class="ui-city-link city-HSN" data-code="HSN" title="舟山" isinter="N">舟山</a><a
+                                    class="ui-city-link city-ZAT" data-code="ZAT" title="昭通" isinter="N">昭通</a><a
+                                    class="ui-city-link city-ZHY" data-code="ZHY" title="中卫" isinter="N">中卫</a><a
+                                    class="ui-city-link city-YZY" data-code="YZY" title="张掖" isinter="N">张掖</a><a
+                                    class="ui-city-link city-WMT" data-code="WMT" title="遵义茅台" isinter="N">遵义茅台</a><a
+                                    class="ui-city-link city-ZYI" data-code="ZYI" title="遵义新舟" isinter="N">遵义新舟</a><a
+                                    class="ui-city-link city-CGO" data-code="CGO" title="郑州" isinter="N">郑州</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

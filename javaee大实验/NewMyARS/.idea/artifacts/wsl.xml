@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="wsl">
+    <output-path>$PROJECT_DIR$/out/artifacts/wsl</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="NewMyARS" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="lib" />
+          <element id="library" level="project" name="spring-aop-5.2.1.RELEASE" />
+          <element id="library" level="project" name="spring-context-5.2.1.RELEASE" />
+          <element id="library" level="project" name="spring-beans-5.2.1.RELEASE" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="NewMyARS/web/Web" />
+    </root>
+  </artifact>
+</component>

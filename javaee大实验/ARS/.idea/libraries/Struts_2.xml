@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="Struts 2" type="struts2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../struts2 8+1+1核心包/commons-fileupload-1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../struts2 8+1+1核心包/commons-io-2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../struts2 8+1+1核心包/commons-lang3-3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../struts2 8+1+1核心包/freemarker-2.3.28.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../struts2 8+1+1核心包/javassist-3.11.0.GA.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../struts2 8+1+1核心包/ognl-3.0.21.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../struts2 8+1+1核心包/struts2-core-2.3.37.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../struts2 8+1+1核心包/struts2-dojo-plugin-2.3.37.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../struts2 8+1+1核心包/struts2-spring-plugin-2.3.37.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../struts2 8+1+1核心包/xwork-core-2.3.37.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

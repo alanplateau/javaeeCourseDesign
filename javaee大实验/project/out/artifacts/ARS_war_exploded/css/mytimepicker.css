@@ -1,0 +1,4 @@
+.ui-datepicker{
+    width: 15em;
+    z-index: 9999 !important;
+}
