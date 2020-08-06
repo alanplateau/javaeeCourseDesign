@@ -26,9 +26,9 @@ public class SendSms {
 
     private Log logger= LogFactory.getLog(SendSms.class);
 
-    final String accessKeyId ="LTAI4FweRSnGWvQxma8NPUYm";//你的accessKeyId,
+    final String accessKeyId ="";//你的accessKeyId,
 
-    final String accessKeySecret ="vyiGmCRtAeyK3jxXx4fD59AoDctHva";//你的accessKeySecret
+    final String accessKeySecret ="";//你的accessKeySecret
 
     public boolean sendMsg(String phone, String templateCode, String templateParam) {
 
